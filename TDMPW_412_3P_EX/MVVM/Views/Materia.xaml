@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TDMPW_412_3P_EX.MVVM.Views.Materia"
+             Title="Materia">
+    <VerticalStackLayout>
+        <Label Text="Calcular la calificación de una materia"
+			   HorizontalTextAlignment="Center"
+			   VerticalTextAlignment="Center"
+			   FontSize="32"
+               Margin="0,0,0,10"/>
+        <HorizontalStackLayout>
+            <Frame BackgroundColor="Wheat" WidthRequest="400" HeightRequest="450" Margin="60,0,40,0">
+                <VerticalStackLayout>
+                    <Frame Margin="10" HasShadow="True" BorderColor="Transparent">
+                        <Label Text="Nombre de la materia"
+							   HorizontalOptions="Center"
+						       VerticalOptions="Center"
+							   FontAttributes="Bold"
+						       FontSize="Medium"/>
+                    </Frame>
+                    <Entry BackgroundColor="White"
+						   Placeholder="Escribe el nombre de la materia."
+						   HorizontalTextAlignment="Center"
+                           Margin="10"
+                           Text="{Binding Materia.Nombre}"
+                           TextColor="Black"/>
+                    <Frame BorderColor="Transparent" WidthRequest="350">
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label VerticalOptions="Center"
+                                       HorizontalOptions="Center"
+                                       TextColor="Black"
+                                       Text="Holaaaaa"/>
+                                <Label Text="Rubro(s)"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+                                       Margin="0,0,40,0"/>
+                                <Label Text="Valor ( % )"
+									   HorizontalTextAlignment="Center"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+                                       Margin="0,0,15,0"/>
+                                <Label Text="Calificación"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Start"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="1 ero"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+                                       Margin="0,0,10,0"/>
+                                <Entry BackgroundColor="PapayaWhip"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+									   WidthRequest="100"
+                                       Margin="0,0,10,0"
+                                       Text="{Binding Materia.Rubro1}"
+                                       TextColor="Black"/>
+                                <Entry BackgroundColor="LightPink"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+									   WidthRequest="70"
+                                       Margin="0,0,10,0"
+                                       Text="{Binding Materia.ValorRubro1}"
+                                       TextColor="Black"/>
+                                <Entry BackgroundColor="LightGreen"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Start"
+									   WidthRequest="78"
+                                       Text="{Binding Materia.CalificacionRubro1}"
+                                       TextColor="Black"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="2 do"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+                                       Margin="0,0,15,0"/>
+                                <Entry BackgroundColor="PapayaWhip"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+									   WidthRequest="100"
+                                       Margin="0,0,10,0"
+                                       Text="{Binding Materia.Rubro2}"
+                                       TextColor="Black"/>
+                                <Entry BackgroundColor="LightPink"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+									   WidthRequest="70"
+                                       Margin="0,0,10,0"
+                                       Text="{Binding Materia.ValorRubro2}"
+                                       TextColor="Black"/>
+                                <Entry BackgroundColor="LightGreen"
+								       VerticalOptions="Center"
+								       HorizontalOptions="Start"
+								       WidthRequest="78"
+                                       Text="{Binding Materia.CalificacionRubro2}"
+                                       TextColor="Black"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="3 ero"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+                                       Margin="0,0,10,0"/>
+                                <Entry BackgroundColor="PapayaWhip"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+									   WidthRequest="100"
+                                       Margin="0,0,10,0"
+                                       Text="{Binding Materia.Rubro3}"
+                                       TextColor="Black"/>
+                                <Entry BackgroundColor="LightPink"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+									   WidthRequest="70"
+                                       Margin="0,0,10,0"
+                                       Text="{Binding Materia.ValorRubro3}"
+                                       TextColor="Black"/>
+                                <Entry BackgroundColor="LightGreen"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Start"
+									   WidthRequest="78"
+                                       Text="{Binding Materia.CalificacionRubro3}"
+                                       TextColor="Black"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+                    <Button Margin="10"
+							Text="Calcular calificación de la materia"
+							BackgroundColor="Blue"
+                            TextColor="White"
+                            Command="{Binding cmdCalcularResultado}"/>
+                </VerticalStackLayout>
+            </Frame>
+            <Button Text="Reiniciar Valores"
+                    Command="{Binding cmdReiniciarCampos}"
+                    Margin="0,0,40,0"/>
+            <Frame BackgroundColor="DarkBlue" BorderColor="White" WidthRequest="400" HeightRequest="450">
+                <VerticalStackLayout>
+                    <Frame BackgroundColor="LightGray" Margin="0,0,0,20">
+                        <Label Text="{Binding Materia.Nombre}"
+                               FontSize="25"
+                               TextColor="Black"/>
+                    </Frame>
+                    <Frame Margin="0,0,0,20">
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout Margin="0,0,0,15">
+                                <Border Stroke="#C49B33"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#2B0B98"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center"
+                                        Margin="0,0,24,0">
+                                    <Label Text="{Binding Materia.Rubro1}"
+                                           TextColor="White"/>
+                                </Border>
+                                <Border Stroke="#C49B33"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#2B0B98"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center"
+                                        Margin="0,0,10,0">
+                                    <Label Text="{Binding Materia.ValorRubro1}"
+                                           TextColor="White"/>
+                                </Border>
+                                <Border Stroke="#C49B33"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#2B0B98"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center">
+                                    <Label Text="{Binding Materia.CalificacionRubro1}"
+                                           TextColor="White"/>
+                                </Border>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Margin="0,0,0,15">
+                                <Border Stroke="#C49B33"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#2B0B98"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center"
+                                        Margin="0,0,24,0">
+                                    <Label Text="{Binding Materia.Rubro2}"
+                                           TextColor="White"/>
+                                </Border>
+                                <Border Stroke="#C49B33"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#2B0B98"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center"
+                                        Margin="0,0,10,0">
+                                    <Label Text="{Binding Materia.ValorRubro2}"
+                                           TextColor="White"/>
+                                </Border>
+                                <Border Stroke="#C49B33"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#2B0B98"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center">
+                                    <Label Text="{Binding Materia.CalificacionRubro2}"
+                                           TextColor="White"/>
+                                </Border>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout >
+                                <Border Stroke="#C49B33"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#2B0B98"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center"
+                                        Margin="0,0,24,0">
+                                    <Label Text="{Binding Materia.Rubro3}"
+                                           TextColor="White"/>
+                                </Border>
+                                <Border Stroke="#C49B33"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#2B0B98"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center"
+                                        Margin="0,0,10,0">
+                                    <Label Text="{Binding Materia.ValorRubro3}"
+                                           TextColor="White"/>
+                                </Border>
+                                <Border Stroke="#C49B33"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#2B0B98"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center">
+                                    <Label Text="{Binding Materia.CalificacionRubro3}"
+                                           TextColor="White"/>
+                                </Border>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+                    <Frame>
+                        <VerticalStackLayout>
+                            <Label Text="Calificacion de la materia"
+                                   FontSize="25"/>
+                            <Label Text="{Binding Materia.CalificacionFinal}"
+                                   FontSize="20"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                    
+                </VerticalStackLayout>
+            </Frame>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="TDMPW_412_3P_EX.MVVM.Views.Bienvenida"
+            Title="Bienvenida"
+            FlyoutLayoutBehavior="Split">
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Flyout">
+            <ContentPage.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Offset="0.0" Color="#ff2d9b"/>
+                    <GradientStop Offset="0.25" Color="#a400d0"/>
+                    <GradientStop Offset="0.50" Color="#7000ff"/>
+                    <GradientStop Offset="0.75" Color="#00edff"/>
+                    <GradientStop Offset="1" Color="#14edc2"/>
+                </LinearGradientBrush>
+            </ContentPage.Background>
+            <VerticalStackLayout>
+                <Image  Source="calificaciona.jpg"
+                        HeightRequest="200"
+                        HorizontalOptions="Center"
+                        Margin="0,20,0,0"/>
+
+                <Button Text="Materia"
+                        VerticalOptions="Center"
+                        CornerRadius="25"
+                        WidthRequest="200"
+                        FontSize="Medium"
+                        Margin="0,20,0,0"
+                        Clicked="aMateria"
+                        FontFamily="coolvetica"/>
+
+                <Button Text="Semestre"
+                        VerticalOptions="Center"
+                        CornerRadius="25"
+                        WidthRequest="200"
+                        FontSize="Medium"
+                        Margin="0,20,0,0"
+                        Clicked="aSemestre"
+                        FontFamily="coolvetica"/>
+            </VerticalStackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+
+    <FlyoutPage.Detail>
+        <ContentPage Title="Bienvenida">
+            <ContentPage.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Offset="0.0" Color="#4b3ffb"/>
+                    <GradientStop Offset="0.25" Color="#4900d0"/>
+                    <GradientStop Offset="0.75" Color="#6c00d0"/>
+                    <GradientStop Offset="1" Color="#9b46fc"/>
+                </LinearGradientBrush>
+            </ContentPage.Background>
+            <Grid ColumnDefinitions=".3*,.3*,.3*" RowDefinitions=".25*,.25*,.25*,.25*">
+                <Label Text="CAPTURA DE CALIFICACIONES"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       Grid.ColumnSpan="3"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       BackgroundColor="#3c0080"
+                       FontSize="Header"
+                       FontFamily="coolvetica"/>
+
+                <Label Text="BIENVENIDOS"
+                       Grid.Column="0"
+                       Grid.Row="1"
+                       Grid.ColumnSpan="3"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="Title"
+                       FontFamily="coolvetica"/>
+
+                <Image Source="imagenprincipal.jpg"
+                       HeightRequest="200"
+                       HorizontalOptions="Center"
+                       Grid.Column="0"
+                       Grid.Row="2"
+                       Grid.RowSpan="2"
+                       Grid.ColumnSpan="3"/>
+            </Grid>
+        </ContentPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>

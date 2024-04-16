@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TDMPW_412_3P_EX.MVVM.Views.Semestre"
+             Title="Semestre">
+    <VerticalStackLayout>
+        <Label Text="Calcular la calificación de un semestre"
+			   HorizontalTextAlignment="Center"
+			   VerticalTextAlignment="Center"
+			   FontSize="32"
+               Margin="0,0,0,10"/>
+        <HorizontalStackLayout>
+            <Frame BackgroundColor="Wheat" WidthRequest="400" HeightRequest="450" Margin="60,0,40,0">
+                <VerticalStackLayout>
+                    <Frame Margin="10" HasShadow="True" BorderColor="Transparent">
+                        <Label Text="Nombre de la materia"
+							   HorizontalOptions="Center"
+						       VerticalOptions="Center"
+							   FontAttributes="Bold"
+						       FontSize="Medium"/>
+                    </Frame>
+                    <Entry BackgroundColor="White"
+						   Placeholder="Escribe el nombre de la materia."
+						   HorizontalTextAlignment="Center"
+                           Margin="10"
+                           TextColor="Black"
+                           Text="{Binding Semestre.NombreMateria}"/>
+                    <Frame BorderColor="Transparent" WidthRequest="350" HeightRequest="250">
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout Margin="0,0,0,10">
+                                <Label VerticalOptions="Center"
+                                       HorizontalOptions="Center"
+                                       TextColor="Black"
+                                       Text="Holaaaaaaaaaaa"/>
+                                <Label Text="Valor ( % )"
+									   HorizontalTextAlignment="Center"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+                                       Margin="0,0,38,0"/>
+                                <Label Text="Calificación"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Start"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Margin="0,0,0,20">
+                                <Label Text="1er Parcial"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+                                       Margin="0,0,19,0"/>
+                                <Entry BackgroundColor="LightPink"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+									   WidthRequest="100"
+                                       Margin="0,0,10,0"
+                                       Text="{Binding Semestre.ValorParcial1}"/>
+                                <Entry BackgroundColor="LightGreen"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Start"
+									   WidthRequest="100"
+                                       Text="{Binding Semestre.CalificacionParcial1}"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Margin="0,0,0,20">
+                                <Label Text="2do Parcial"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+                                       Margin="0,0,15,0"/>
+                                <Entry BackgroundColor="LightPink"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+									   WidthRequest="100"
+                                       Margin="0,0,10,0"
+                                       Text="{Binding Semestre.ValorParcial2}"/>
+                                <Entry BackgroundColor="LightGreen"
+								       VerticalOptions="Center"
+								       HorizontalOptions="Start"
+								       WidthRequest="100"
+                                       Text="{Binding Semestre.CalificacionParcial2}"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="3er Parcial"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+                                       Margin="0,0,19,0"/>
+                                <Entry BackgroundColor="LightPink"
+									   VerticalOptions="Center"
+									   HorizontalOptions="Center"
+									   WidthRequest="100"
+                                       Margin="0,0,10,0"
+                                       Text="{Binding Semestre.ValorParcial3}"/>
+                                <Button BackgroundColor="DarkGreen"
+									    VerticalOptions="Center"
+									    HorizontalOptions="Start"
+									    WidthRequest="100"
+                                        Text="Calcular 3er"
+                                        TextColor="White"
+                                        FontSize="13"
+                                        Command="{Binding cmdCalCularCalificacionSemestral}"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+            </Frame>
+            <Button Text="Reiniciar Valores"
+                    Command="{Binding cmdReiniciarValores}"
+                    Margin="0,0,40,0"/>
+            <Frame BackgroundColor="Gray" BorderColor="White" WidthRequest="400" HeightRequest="450">
+                <VerticalStackLayout>
+                    <Frame BackgroundColor="LightGray" Margin="0,0,0,20">
+                        <Label Text="{Binding Semestre.NombreMateria}"
+                               FontSize="25"
+                               TextColor="Black"/>
+                    </Frame>
+                    <Frame Margin="0,0,0,20">
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout Margin="0,0,0,15">
+                                <Border Stroke="white"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#808080"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center"
+                                        Margin="0,0,20,0">
+                                    <Label Text="Primer Parcial"
+                                           TextColor="White"/>
+                                </Border>
+                                <Border Stroke="white"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#808080"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center"
+                                        Margin="0,0,10,0">
+                                    <Label Text="{Binding Semestre.ValorParcial1}"
+                                           TextColor="White"/>
+                                </Border>
+                                <Border Stroke="white"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#808080"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center">
+                                    <Label Text="{Binding Semestre.CalificacionParcial1}"
+                                           TextColor="White"/>
+                                </Border>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Margin="0,0,0,15">
+                                <Border Stroke="white"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#808080"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center"
+                                        Margin="0,0,8,0">
+                                    <Label Text="Segundo Parcial"
+                                           TextColor="White"/>
+                                </Border>
+                                <Border Stroke="white"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#808080"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center"
+                                        Margin="0,0,10,0">
+                                    <Label Text="{Binding Semestre.ValorParcial2}"
+                                           TextColor="White"/>
+                                </Border>
+                                <Border Stroke="white"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#808080"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center">
+                                    <Label Text="{Binding Semestre.CalificacionParcial2}"
+                                           TextColor="White"/>
+                                </Border>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout >
+                                <Border Stroke="white"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#808080"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center"
+                                        Margin="0,0,24,0">
+                                    <Label Text="Tercer Parcial"
+                                           TextColor="White"/>
+                                </Border>
+                                <Border Stroke="white"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#808080"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center"
+                                        Margin="0,0,10,0">
+                                    <Label Text="{Binding Semestre.ValorParcial3}"
+                                           TextColor="White"/>
+                                </Border>
+                                <!--<Border Stroke="white"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 5,5,5,5"
+                                        Background="#808080"
+                                        Padding="8,8"
+                                        HorizontalOptions="Center">
+                                    <Label Text="Calificacion"
+                                           TextColor="White"/>
+                                </Border>-->
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+                    <Frame BackgroundColor="White">
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="Calificacion Para sacar 6:"
+                                       FontSize="20"
+                                       Margin="0,0,16,0"
+                                       TextColor="Black"/>
+                                <Label Text="{Binding Semestre.CalificacionParcial3Necesaria6}"
+                                       FontSize="20"
+                                       TextColor="Black"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="Calificacion Para sacar 10:"
+                                       FontSize="20"
+                                       Margin="0,0,5,0"
+                                       TextColor="Black"/>
+                                <Label Text="{Binding Semestre.CalificacionParcial3Necesaria10}"
+                                       FontSize="20"
+                                       TextColor="Black"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+            </Frame>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
